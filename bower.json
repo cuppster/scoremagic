@@ -1,0 +1,22 @@
+{
+  "name": "scoremagic",
+  "version": "0.0.1",
+  "homepage": "http://cuppster.com",
+  "authors": [
+    "Jason Cupp <jason@cuppster.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mobile-angular-ui": "~1.1.0-beta.29",
+    "angular": "~1.2.22",
+    "angular-touch": "~1.2.22"
+  }
+}
