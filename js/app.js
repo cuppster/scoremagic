@@ -3,5 +3,6 @@
 
 angular.module('ScoreMagicApp', [
     'ScoreMagicApp.controllers',
-    'mobile-angular-ui'
+    'mobile-angular-ui',
+    'ngAudio',
 ]);

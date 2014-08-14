@@ -17,6 +17,7 @@
   "dependencies": {
     "mobile-angular-ui": "~1.1.0-beta.29",
     "angular": "~1.2.22",
-    "angular-touch": "~1.2.22"
+    "angular-touch": "~1.2.22",
+    "underscore": "~1.6.0"
   }
 }

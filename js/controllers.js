@@ -11,5 +11,9 @@ controller('scoreController', function ($scope) {
     $scope.scoreDown = function() {
         $scope.score--;
     }
+    
+    $scope.resetScore = function() {
+        $scope.score = 20;
+    }
 	
 });

@@ -12,15 +12,33 @@
     
     <link rel="stylesheet" href="./bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-base.min.css" />
 	<style>	
-	
+        
+        .app { background: white; }
+        
         .green { color: green !important; }
         .red { color: red !important; }
+        
+        .score-doc { 
+            height: 50%;
+            width: 100%;
+            display: table;
+        }
+        
+        .score-doc a, .score-doc span {
+            display: table-cell;
+            vertical-align: bottom;
+        }
+        
+        .btn-navbar {
+            line-height: 100px !important;
+        }
         
         .score {
             text-align: center; 
             display: table-cell;
+            font-size: 600%;
             vertical-align: middle;
-            font-size: 200%;
+           
         }
         
         .div180 {
@@ -33,50 +51,42 @@
 
 	</style>    
     
+    <script src="./bower_components/underscore/underscore.js"></script>
     <script src="./bower_components/angular/angular.min.js"></script>
     <script src="./bower_components/angular-touch/angular-touch.min.js"></script>
     <script src="./bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
+    <script src="./js/angular.audio.js"></script>
 
     <script src="./js/app.js"></script>
     <script src="./js/controllers.js"></script>
-    <script src="./js/services.js"></script>    
     
 </head>
 
 <body ng-app="ScoreMagicApp">
 
-
+    
+    <audio id='click1' ng-audio>
+        <source src="sounds/ninja.mp3" type="audio/mp3">
+    </audio>
+    <audio id='click2' ng-audio>
+        <source src="sounds/smb_stage_clear.wav" type="audio/wav">
+    </audio>
+    <audio id='click3' ng-audio>
+        <source src="sounds/timetravel.mp3" type="audio/mp3">
+    </audio>
 
     <div class="app">
-
-        <div class="navbar navbar-app navbar-absolute-top div180" ng-controller="scoreController">
-            <div class="btn-group justified">		
-
-                <a ng-click='scoreUp()' class="green btn btn-navbar btn-icon-only" role="button"><i class="fa fa-plus-circle fa-5x"></i></a>
-                <span class='score'>{{score}}</span>
-                <a ng-click='scoreDown()' class="red btn btn-navbar btn-icon-only" role="button"><i class="fa fa-minus-circle fa-5x"></i></a>
-
-            </div>
-        </div>
-
-    <div class="navbar navbar-app navbar-absolute-bottom" ng-controller="scoreController">
-        <div class="btn-group justified">		
-
-            <a ng-click='scoreUp()' class="green btn btn-navbar btn-icon-only" role="button"><i class="fa fa-plus-circle fa-5x"></i></a>
+        <div class='score-doc top div180' ng-controller="scoreController">            
+            <a ng-click='scoreUp()' ng-audio='click2' class="green btn btn-icon-only" role="button"><i class="fa fa-plus-circle fa-5x"></i></a>
             <span class='score'>{{score}}</span>
-            <a ng-click='scoreDown()' class="red btn btn-navbar btn-icon-only" role="button"><i class="fa fa-minus-circle fa-5x"></i></a>
-
+            <a ng-click='scoreDown()' ng-audio='click1' class="red btn btn-icon-only" role="button"><i class="fa fa-minus-circle fa-5x"></i></a>
+        </div>
+        
+        <div class='score-doc bottom' ng-controller="scoreController">
+            <a ng-click='scoreUp()' ng-audio='click2' class="green btn btn-icon-only" role="button"><i class="fa fa-plus-circle fa-5x"></i></a>
+            <span class='score'>{{score}}</span>
+            <a ng-click='scoreDown()' ng-audio='click1' class="red btn btn-icon-only" role="button"><i class="fa fa-minus-circle fa-5x"></i></a>
         </div>
     </div>
-
-    <!--
-      <div class="app-body">
-          <ng-view class="app-content"></ng-view>
-      </div>
-    -->
-    </div>
-
-
-
 </body>
 </html>
