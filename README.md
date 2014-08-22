@@ -1,4 +1,4 @@
 scoremagic
 ==========
 
-mobile web app to help keep score for two players
+A mobile web app build with angularjs to help keep score for two players.
